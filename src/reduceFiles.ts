@@ -25,6 +25,7 @@ const reduceFiles = async (config: Config, files: string[]) => {
     const sourceOptions = config.sourceOptions[+selectedSourceOptions - 1];
 
     const fileString = fs.readFileSync(`${config.sourceDirectory}/${filename}`, 'utf-8');
+
     const csvArray = csvParser(fileString, sourceOptions.startingRowIndex);
 
     const csvString = csvArray.reduce((str, row) => {

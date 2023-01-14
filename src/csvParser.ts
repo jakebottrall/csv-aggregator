@@ -21,9 +21,10 @@ const guessDelimiter = (text: string) => {
 };
 
 const csvParser = (csv: string, startingRowIndex: number) => {
-  const delimiter = guessDelimiter(csv);
+  const normalizedCSV = csv.split('\r').join('\n').split("'").join('').split('"').join('');
+  const delimiter = guessDelimiter(normalizedCSV);
 
-  return csv
+  return normalizedCSV
     .split('\n')
     .filter((line) => line)
     .slice(startingRowIndex)
