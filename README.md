@@ -96,7 +96,7 @@ To get a local copy up and running follow these simple example steps.
    ```sh
    git clone https://github.com/jakebottrall/csv-aggregator.git
    ```
-2. CD the repo
+2. CD into the repo
    ```sh
    cd csv-aggregator
    ```
