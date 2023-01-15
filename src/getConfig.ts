@@ -4,8 +4,6 @@ import { z } from 'zod';
 
 const Config = z.object({
   sourceDirectory: z.string(),
-  destinationDirectory: z.string(),
-  destinationFilename: z.string(),
   includeHeaders: z.boolean(),
   columns: z
     .object({
