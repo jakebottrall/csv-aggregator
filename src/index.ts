@@ -1,4 +1,4 @@
-import fs from 'fs';
+import copyToClipboard from './copyToClipboard';
 import getConfig from './getConfig';
 import getFiles from './getFiles';
 import reduceFiles from './reduceFiles';
@@ -9,7 +9,8 @@ const init = async () => {
     const files = await getFiles(config.sourceDirectory);
     const csv = await reduceFiles(config, files);
 
-    fs.writeFileSync(`${config.destinationDirectory}/${config.destinationFilename}.csv`, csv);
+    copyToClipboard(csv);
+    console.log('csv copied to clipboard ✅');
   } catch (error) {
     console.error(error);
   } finally {
