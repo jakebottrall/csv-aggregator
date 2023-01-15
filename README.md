@@ -37,8 +37,6 @@
     <a href="https://github.com/jakebottrall/csv-aggregator"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/jakebottrall/csv-aggregator">View Demo</a>
-    ·
     <a href="https://github.com/jakebottrall/csv-aggregator/issues">Report Bug</a>
     ·
     <a href="https://github.com/jakebottrall/csv-aggregator/issues">Request Feature</a>
