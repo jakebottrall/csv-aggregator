@@ -1,0 +1,121 @@
+{
+  "sourceDirectory": "/Users/username/Downloads/",
+  "includeHeaders": false,
+  "columns": [
+    {
+      "name": "Date",
+      "type": "date",
+      "format": "YYYY-MM-DD"
+    },
+    {
+      "name": "Description",
+      "type": "string"
+    },
+    {
+      "name": "$",
+      "type": "number"
+    },
+    {
+      "name": "Category",
+      "type": "static"
+    },
+    {
+      "name": "Account",
+      "type": "static"
+    }
+  ],
+  "sourceOptions": [
+    {
+      "name": "Chequing",
+      "startingRowIndex": 1,
+      "columns": [
+        {
+          "destinationName": "Date",
+          "columnIndex": 0,
+          "format": "M/D/YYYY"
+        },
+        {
+          "destinationName": "Description",
+          "columnIndex": 2
+        },
+        {
+          "destinationName": "$",
+          "columnIndex": 4
+        },
+        {
+          "destinationName": "Account",
+          "value": "Chequing"
+        }
+      ]
+    },
+    {
+      "name": "Credit",
+      "startingRowIndex": 1,
+      "columns": [
+        {
+          "destinationName": "Date",
+          "columnIndex": 0,
+          "format": "M/D/YYYY"
+        },
+        {
+          "destinationName": "Description",
+          "columnIndex": 2
+        },
+        {
+          "destinationName": "$",
+          "columnIndex": 4
+        },
+        {
+          "destinationName": "Account",
+          "value": "Credit"
+        }
+      ]
+    },
+    {
+      "name": "Savings",
+      "startingRowIndex": 0,
+      "columns": [
+        {
+          "destinationName": "Date",
+          "columnIndex": 0,
+          "format": "DD/MM/YYYY"
+        },
+        {
+          "destinationName": "$",
+          "columnIndex": 1
+        },
+        {
+          "destinationName": "Description",
+          "columnIndex": 2
+        },
+        {
+          "destinationName": "Account",
+          "value": "Savings"
+        }
+      ]
+    },
+    {
+      "name": "Home Loan",
+      "startingRowIndex": 0,
+      "columns": [
+        {
+          "destinationName": "Date",
+          "columnIndex": 0,
+          "format": "DD/MM/YYYY"
+        },
+        {
+          "destinationName": "$",
+          "columnIndex": 1
+        },
+        {
+          "destinationName": "Description",
+          "columnIndex": 2
+        },
+        {
+          "destinationName": "Account",
+          "value": "Home Loan"
+        }
+      ]
+    }
+  ]
+}
