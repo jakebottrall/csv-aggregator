@@ -32,7 +32,7 @@
 <h3 align="center">CSV Aggregator</h3>
 
   <p align="center">
-    A node script to aggregate multiple csv files with any formats, into a single file with one format.
+    A node script to aggregate multiple csv files with any format, into a single format.
     <br />
     <a href="https://github.com/jakebottrall/csv-aggregator"><strong>Explore the docs »</strong></a>
     <br />
