@@ -8,7 +8,7 @@ const reduceFiles = async (config: Config, files: string[]) => {
   let csv = '';
 
   if (config.includeHeaders) {
-    csv = config.columns.reduce((a, c) => `${a},${c.name}`, '');
+    csv = config.columns.reduce((a, c) => `${a}\t${c.name}`, '');
     csv += '\n';
   }
 
@@ -50,7 +50,7 @@ const reduceFiles = async (config: Config, files: string[]) => {
         }
 
         if (i !== config.columns.length - 1) {
-          str += ',';
+          str += '\t';
         } else {
           str += '\n';
         }
