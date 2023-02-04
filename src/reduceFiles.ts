@@ -1,8 +1,11 @@
 import dayjs from 'dayjs';
+import customParseFormat from 'dayjs/plugin/customParseFormat';
 import fs from 'fs';
 import csvParser from './csvParser';
 import { Config } from './getConfig';
 import { question } from './prompt';
+
+dayjs.extend(customParseFormat);
 
 const reduceFiles = async (config: Config, files: string[]) => {
   let csv = '';
