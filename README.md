@@ -65,7 +65,7 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 - node
-- yarn
+- pnpm
 
 ### Installation
 
@@ -79,7 +79,7 @@ To get a local copy up and running follow these simple example steps.
    ```
 3. Install packages
    ```sh
-   yarn install
+   pnpm install
    ```
 4. Create a `config.json`
    ```sh
