@@ -1,9 +1,7 @@
-import { spawn } from 'child_process';
-
-const copyToClipboard = (data: string) => {
-  const proc = spawn('pbcopy');
+const copyToClipboard = async (data: string) => {
+  const proc = Bun.spawn(['pbcopy'], { stdin: 'pipe' });
   proc.stdin.write(data);
-  proc.stdin.end();
+  await proc.exited;
 };
 
 export default copyToClipboard;
