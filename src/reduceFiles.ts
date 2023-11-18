@@ -1,6 +1,5 @@
 import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
-import fs from 'fs';
 import csvParser from './csvParser';
 import { Config } from './getConfig';
 import { question } from './prompt';
@@ -27,7 +26,8 @@ const reduceFiles = async (config: Config, files: string[]) => {
 
     const sourceOptions = config.sourceOptions[+selectedSourceOptions - 1];
 
-    const fileString = fs.readFileSync(`${config.sourceDirectory}/${filename}`, 'utf-8');
+    const file = Bun.file(`${config.sourceDirectory}/${filename}`);
+    const fileString = await file.text();
 
     const csvArray = csvParser(fileString, sourceOptions.startingRowIndex);
 

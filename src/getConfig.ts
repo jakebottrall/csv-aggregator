@@ -1,5 +1,3 @@
-import fs from 'fs';
-import { dirname } from 'path';
 import { z } from 'zod';
 
 const Config = z.object({
@@ -30,8 +28,10 @@ const Config = z.object({
 
 export type Config = z.infer<typeof Config>;
 
-const getConfig = () => {
-  const configJSON = fs.readFileSync(`${dirname('')}/config.json`, 'utf-8');
+const getConfig = async () => {
+  const configPath = `${import.meta.dir.replace('src', '')}/config.json`;
+  const configFile = Bun.file(configPath);
+  const configJSON = await configFile.text();
   const configObj = JSON.parse(configJSON);
 
   return Config.parse(configObj);

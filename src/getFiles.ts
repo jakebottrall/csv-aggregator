@@ -1,7 +1,5 @@
-import fs from 'fs';
-import path from 'path';
-
-const { readdir } = fs.promises;
+import { readdir } from 'node:fs/promises';
+import path from 'node:path';
 
 const getFiles = async (sourceDirectory: string) => {
   const files = await readdir(sourceDirectory);
