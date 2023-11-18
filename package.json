@@ -1,7 +1,7 @@
 {
   "name": "csv-aggregator",
   "version": "1.0.0",
-  "description": "A node script to aggregate multiple csv files with any formats, into a single file with one format.",
+  "description": "Some typescript to aggregate multiple csv files with any formats, into a single file with one format.",
   "repository": "https://github.com/jakebottrall/csv-aggregator.git",
   "author": "jakebottrall <jakebottrall@gmail.com>",
   "license": "MIT",
