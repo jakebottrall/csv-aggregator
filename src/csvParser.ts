@@ -1,8 +1,8 @@
 const guessDelimiter = (text: string) => {
-  const possibleDelimiters = [',', ';', '\t'].filter((delimiter) => {
+  const possibleDelimiters = [",", ";", "\t"].filter((delimiter) => {
     let cache = -1;
 
-    return text.split('\n').every((line) => {
+    return text.split("\n").every((line) => {
       if (!line) {
         return true;
       }
@@ -21,11 +21,17 @@ const guessDelimiter = (text: string) => {
 };
 
 const csvParser = (csv: string, startingRowIndex: number) => {
-  const normalizedCSV = csv.split('\r').join('\n').split("'").join('').split('"').join('');
+  const normalizedCSV = csv
+    .split("\r")
+    .join("\n")
+    .split("'")
+    .join("")
+    .split('"')
+    .join("");
   const delimiter = guessDelimiter(normalizedCSV);
 
   return normalizedCSV
-    .split('\n')
+    .split("\n")
     .filter((line) => line)
     .slice(startingRowIndex)
     .reduce((a, c) => [...a, c.split(delimiter)], [] as string[][]);

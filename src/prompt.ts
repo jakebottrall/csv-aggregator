@@ -1,4 +1,4 @@
-import readline from 'node:readline';
+import readline from "node:readline";
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -10,5 +10,5 @@ export const question = (query: string) =>
 
 export const yesOrNo = async (query: string) => {
   const res = await question(query);
-  return ['y', 'yes'].includes(res);
+  return ["y", "yes"].includes(res);
 };

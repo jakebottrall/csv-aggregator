@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import { z } from "zod";
 
 const Config = z.object({
   sourceDirectory: z.string(),
@@ -6,7 +6,7 @@ const Config = z.object({
   columns: z
     .object({
       name: z.string(),
-      type: z.enum(['string', 'date', 'number', 'static']),
+      type: z.enum(["string", "date", "number", "static"]),
       format: z.string().optional(),
     })
     .array(),
@@ -29,7 +29,7 @@ const Config = z.object({
 export type Config = z.infer<typeof Config>;
 
 const getConfig = async () => {
-  const configPath = `${import.meta.dir.replace('src', '')}/config.json`;
+  const configPath = `${import.meta.dir.replace("src", "")}/config.json`;
   const configFile = Bun.file(configPath);
   const configJSON = await configFile.text();
   const configObj = JSON.parse(configJSON);

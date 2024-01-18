@@ -5,6 +5,7 @@
   "repository": "https://github.com/jakebottrall/csv-aggregator.git",
   "author": "jakebottrall <jakebottrall@gmail.com>",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "start": "bun ./src",
     "lint": "eslint ./src",

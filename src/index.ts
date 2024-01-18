@@ -1,7 +1,7 @@
-import copyToClipboard from './copyToClipboard';
-import getConfig from './getConfig';
-import getFiles from './getFiles';
-import reduceFiles from './reduceFiles';
+import copyToClipboard from "./copyToClipboard";
+import getConfig from "./getConfig";
+import getFiles from "./getFiles";
+import reduceFiles from "./reduceFiles";
 
 try {
   const config = await getConfig();
@@ -9,7 +9,7 @@ try {
   const csv = await reduceFiles(config, files);
 
   copyToClipboard(csv);
-  console.log('csv copied to clipboard ✅');
+  console.log("csv copied to clipboard ✅");
 } catch (error) {
   console.error(error);
 } finally {
