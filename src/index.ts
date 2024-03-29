@@ -1,7 +1,7 @@
-import copyToClipboard from "./copyToClipboard";
-import getConfig from "./getConfig";
-import getFiles from "./getFiles";
-import reduceFiles from "./reduceFiles";
+import { copyToClipboard } from "./copyToClipboard";
+import { getConfig } from "./getConfig";
+import { getFiles } from "./getFiles";
+import { reduceFiles } from "./reduceFiles";
 
 try {
   const config = getConfig();

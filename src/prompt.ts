@@ -5,10 +5,11 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-export const question = (query: string) =>
-  new Promise<string>((res) => rl.question(`${query}\n`, res));
+export async function question(query: string) {
+  return new Promise<string>((res) => rl.question(`${query}\n`, res));
+}
 
-export const yesOrNo = async (query: string) => {
+export async function yesOrNo(query: string) {
   const res = await question(query);
   return ["y", "yes"].includes(res);
-};
+}

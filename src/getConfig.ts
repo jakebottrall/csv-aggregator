@@ -29,10 +29,8 @@ const Config = z.object({
 
 export type Config = z.infer<typeof Config>;
 
-const getConfig = () => {
+export function getConfig() {
   const configFile = fs.readFileSync("config.json").toString();
   const configObj = JSON.parse(configFile);
   return Config.parse(configObj);
-};
-
-export default getConfig;
+}
