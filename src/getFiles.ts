@@ -1,8 +1,8 @@
-import { readdir } from "node:fs/promises";
+import fs from "node:fs";
 import path from "node:path";
 
-const getFiles = async (sourceDirectory: string) => {
-  const files = await readdir(sourceDirectory);
+const getFiles = (sourceDirectory: string) => {
+  const files = fs.readdirSync(sourceDirectory);
   const csvFiles = files.filter(
     (file) => path.extname(file).toLowerCase() === ".csv",
   );

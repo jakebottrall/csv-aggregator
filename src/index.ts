@@ -4,8 +4,8 @@ import getFiles from "./getFiles";
 import reduceFiles from "./reduceFiles";
 
 try {
-  const config = await getConfig();
-  const files = await getFiles(config.sourceDirectory);
+  const config = getConfig();
+  const files = getFiles(config.sourceDirectory);
   const csv = await reduceFiles(config, files);
 
   copyToClipboard(csv);

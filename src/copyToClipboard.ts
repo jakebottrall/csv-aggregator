@@ -1,7 +1,10 @@
+import { exec } from "node:child_process";
+import { promisify } from "node:util";
+
+const asyncExec = promisify(exec);
+
 const copyToClipboard = async (data: string) => {
-  const proc = Bun.spawn(["pbcopy"], { stdin: "pipe" });
-  proc.stdin.write(data);
-  await proc.exited;
+  await asyncExec(`pbcopy ${data}`);
 };
 
 export default copyToClipboard;

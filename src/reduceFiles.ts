@@ -1,5 +1,6 @@
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
+import fs from "node:fs";
 import csvParser from "./csvParser";
 import { Config } from "./getConfig";
 import { question } from "./prompt";
@@ -26,10 +27,11 @@ const reduceFiles = async (config: Config, files: string[]) => {
 
     const sourceOptions = config.sourceOptions[+selectedSourceOptions - 1];
 
-    const file = Bun.file(`${config.sourceDirectory}/${filename}`);
-    const fileString = await file.text();
+    const file = fs
+      .readFileSync(`${config.sourceDirectory}/${filename}`)
+      .toString();
 
-    const csvArray = csvParser(fileString, sourceOptions.startingRowIndex);
+    const csvArray = csvParser(file, sourceOptions.startingRowIndex);
 
     const csvString = csvArray.reduce((str, row) => {
       config.columns.forEach((col, i) => {
