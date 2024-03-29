@@ -1,10 +1,9 @@
 import { exec } from "node:child_process";
-import { promisify } from "node:util";
 
-const asyncExec = promisify(exec);
-
-const copyToClipboard = async (data: string) => {
-  await asyncExec(`pbcopy ${data}`);
+const copyToClipboard = (data: string) => {
+  const process = exec("pbcopy");
+  process.stdin?.write(data);
+  process.stdin?.end();
 };
 
 export default copyToClipboard;
