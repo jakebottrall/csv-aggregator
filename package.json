@@ -10,7 +10,7 @@
   "scripts": {
     "start": "tsx ./src",
     "lint": "eslint ./src",
-    "types": "tsc --noEmit"
+    "check": "tsc --noEmit"
   },
   "dependencies": {
     "dayjs": "^1.11.10",
